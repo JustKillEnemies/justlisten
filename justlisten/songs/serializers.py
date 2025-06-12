@@ -9,6 +9,7 @@ class SongSerializer(serializers.ModelSerializer):
     class Meta:
         model = Song
         fields = ['id', 'title', 'duration', 'author_name', 'cover', 'release_date', 'description', 'album_name', 'slug']
+        read_only_fields = ['duration', 'release_date', 'slug']
 
 
 class AlbumSerializer(serializers.ModelSerializer):
@@ -17,6 +18,7 @@ class AlbumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Album
         fields = ['id','name', 'author_name', 'cover', 'songs_count', 'release_date', 'description', 'slug']
+        read_only_fields = ['songs_count', 'release_date', 'slug']
 
 
 class AuthorSerializer(serializers.ModelSerializer):
@@ -24,3 +26,4 @@ class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Author
         fields = ['id', 'name', 'slug']
+        read_only_fields = ['slug']

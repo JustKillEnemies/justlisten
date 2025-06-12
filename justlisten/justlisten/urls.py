@@ -23,6 +23,7 @@ from songs import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('songs.urls')),
+    path('', include('users.urls')),
 ]
 
 if settings.DEBUG:
